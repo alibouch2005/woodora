@@ -1,0 +1,72 @@
+/* ================= TABLET ================= */
+
+@media(max-width:992px){
+
+header .container{
+    height:80px;
+}
+
+.navbar ul{
+    gap:25px;
+}
+
+footer .container{
+    flex-direction:column;
+}
+
+.newsletter{
+    width:100%;
+}
+
+}
+
+/* ================= MOBILE ================= */
+
+@media(max-width:768px){
+
+.navbar,
+.icons{
+    display:none;
+}
+
+.menu-toggle{
+    display:block;
+}
+
+.logo img{
+    width:45px;
+    height:45px;
+}
+
+.logo span{
+    font-size:30px;
+}
+
+.mobile-menu{
+    width:280px;
+}
+
+footer .container{
+    flex-direction:column;
+    gap:35px;
+}
+
+.footer-logo,
+.footer-links,
+.footer-help,
+.newsletter{
+    width:100%;
+}
+
+}
+
+/* ================= DESKTOP ================= */
+
+@media(min-width:769px){
+
+.mobile-menu,
+.overlay{
+    display:none;
+}
+
+}

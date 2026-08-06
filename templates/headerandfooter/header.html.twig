@@ -2,35 +2,76 @@
 
     <div class="container">
 
-        <div class="logo">
-
-            <h2>Woodora</h2>
-
-        </div>
-
-        <nav>
-
+        <!-- Logo -->
+       <div class="logo">
+    <a href="/">
+        <img src="{{ asset('images/logo-icon.png') }}" alt="Woodora">
+        <span>Woodora</span>
+    </a>
+</div>
+        <!-- Navigation Desktop -->
+        <nav class="navbar">
             <ul>
-
                 <li><a href="#">Home</a></li>
-
                 <li><a href="#">Shop</a></li>
-
                 <li><a href="#">About</a></li>
-
                 <li><a href="#">Contact</a></li>
-
             </ul>
-
         </nav>
 
-       <div class="icons">
-    <a href="#"><i class="bi bi-person"></i></a>
-    <a href="#"><i class="bi bi-search"></i></a>
-    <a href="#"><i class="bi bi-heart"></i></a>
-    <a href="#"><i class="bi bi-cart3"></i></a>
-</div>
+        <!-- Icônes Desktop -->
+        <div class="icons">
+            <a href="#"><i class="bi bi-person"></i></a>
+            <a href="#"><i class="bi bi-search"></i></a>
+            <a href="#"><i class="bi bi-heart"></i></a>
+            <a href="#"><i class="bi bi-cart3"></i></a>
+        </div>
+
+        <!-- Bouton Menu Mobile -->
+        <div class="menu-toggle">
+            <i class="bi bi-list"></i>
+        </div>
 
     </div>
 
 </header>
+
+<!-- Fond noir -->
+<div class="overlay"></div>
+
+<!-- Menu Mobile -->
+<div class="mobile-menu">
+
+    <div class="mobile-header">
+        <h2>Woodora</h2>
+
+        <button class="close-menu">
+            <i class="bi bi-x-lg"></i>
+        </button>
+    </div>
+
+    <ul>
+
+        <li><a href="#">Home</a></li>
+
+        <li><a href="#">Shop</a></li>
+
+        <li><a href="#">About</a></li>
+
+        <li><a href="#">Contact</a></li>
+
+    </ul>
+
+    <div class="mobile-icons">
+
+        <a href="#"><i class="bi bi-person"></i></a>
+
+        <a href="#"><i class="bi bi-search"></i></a>
+
+        <a href="#"><i class="bi bi-heart"></i></a>
+
+        <a href="#"><i class="bi bi-cart3"></i></a>
+
+    </div>
+
+</div>

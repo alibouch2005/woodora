@@ -1,36 +1,38 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <title>{% block title %}Woodora{% endblock %}</title>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Woodora{% endblock %}</title>
 
-         <!-- Bootstrap Icons -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Bootstrap Icons -->
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/components.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/mobile.css') }}">
+    {% endblock %}
 
-        {% block stylesheets %}
+    {% block javascripts %}
+    {% endblock %}
 
-       <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/idiomorph"></script>
+    <script src="https://cdn.jsdelivr.net/npm/frankenphp-hot-reload/+esm" type="module"></script>
+</head>
 
-       {% endblock %}
+<body>
 
-        {% block javascripts %}
-          
-        {% endblock %}
+    {% include 'headerandfooter/header.html.twig' %}
 
-        
-        <script src="https://cdn.jsdelivr.net/npm/idiomorph"></script>
-        <script src="https://cdn.jsdelivr.net/npm/frankenphp-hot-reload/+esm" type="module"></script>
-        
-    </head>
-    <body>
-    
-        {%include 'headerandfooter/header.html.twig' %}
+    {% block body %}
+    {% endblock %}
 
-        {% block body %}
-        
-        {% endblock %}
-       {%include 'headerandfooter/footer.html.twig' %}
-    </body>
+    {% include 'headerandfooter/footer.html.twig' %}
+
+    <script src="{{ asset('js/main.js') }}"></script>
+
+</body>
 </html>
