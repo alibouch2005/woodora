@@ -1,0 +1,140 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}
+Woodora
+{% endblock %}
+
+
+
+{% block body %}
+
+
+<!-- ================= HERO ================= -->
+
+
+<section class="hero">
+
+
+    <div class="hero-image">
+
+
+        <img src="{{ asset('images/hero.png') }}" 
+             alt="Woodora furniture">
+
+
+
+        <div class="hero-card">
+
+
+            <span>
+                NEW ARRIVAL
+            </span>
+
+
+
+            <h1>
+                Discover Our<br>
+                New Collection
+            </h1>
+
+
+
+            <p>
+                Discover stylish, high-quality furniture
+                crafted to bring comfort and elegance
+                to your home.
+            </p>
+
+
+
+            <a href="#">
+                Buy Now
+            </a>
+
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+
+
+<!-- ================= CATEGORIES ================= -->
+
+
+<section class="categories">
+
+
+    <h2>
+        Browse The Range
+    </h2>
+
+
+
+    <p class="subtitle">
+        Discover our furniture collections
+    </p>
+
+
+
+
+    <div class="category-container">
+
+
+
+        {% for category in categories %}
+
+
+
+            <a href="{{ path('category_products', {
+                name: category.name
+            }) }}" 
+            class="category-link">
+
+
+
+                <div class="category-card">
+
+
+
+                    <img 
+                    src="{{ asset('images/categories/' ~ category.image) }}"
+                    alt="{{ category.name }}"
+                    >
+
+
+
+                    <h3>
+                        {{ category.name }}
+                    </h3>
+
+
+
+                </div>
+
+
+
+            </a>
+
+
+
+        {% endfor %}
+
+
+
+    </div>
+
+
+
+</section>
+
+
+
+{% endblock %}

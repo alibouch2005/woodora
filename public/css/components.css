@@ -175,80 +175,183 @@ header .container{
     font-size:24px;
 }
 
-/* ================= FOOTER ================= */
+/* ===========================
+        FOOTER WOODORA
+=========================== */
 
 footer{
-    margin-top:80px;
-    padding:80px 0 30px;
+
+   
+    padding:30px 0 10px;
     border-top:1px solid #ddd;
+    background:#fff;
+
 }
+
 
 footer .container{
-    display:flex;
-    justify-content:space-between;
-    gap:60px;
-    flex-wrap:wrap;
+
+    width:90%;
+    max-width:1280px;
+    margin:auto;
+    display:grid;
+    grid-template-columns: 2fr 1fr 1.2fr 1.5fr;
+    gap:10px;
+    align-items:start;
+
 }
 
-.footer-logo{
-    width:280px;
-}
+
+/* ===========================
+        LOGO COLUMN
+=========================== */
+
 
 .footer-logo h2{
-    margin-bottom:20px;
+
+    font-size:32px;
+    font-weight:700;
+    color:#111;
+    margin-bottom:35px;
+
 }
 
+
 .footer-logo p{
+
     color:#777;
+    font-size:18px;
     line-height:30px;
+
 }
+
+
+
+/* ===========================
+        TITLES
+=========================== */
+
+
+.footer-links h3,
+.footer-help h3,
+.newsletter h3{
+
+    color:#999;
+    font-size:18px;
+    font-weight:500;
+    margin-bottom:25px;
+
+}
+
+
+
+/* ===========================
+        LINKS
+=========================== */
+
 
 .footer-links ul,
 .footer-help ul{
+
     list-style:none;
+    padding:0;
+    margin:0;
+
 }
+
 
 .footer-links li,
 .footer-help li{
-    margin-bottom:18px;
+
+    margin-bottom:15px;
+
 }
+
+
 
 .footer-links a,
 .footer-help a{
+
     text-decoration:none;
     color:#111;
+    font-size:17px;
+    transition:.3s;
+
 }
+
 
 .footer-links a:hover,
 .footer-help a:hover{
+
     color:#B88E2F;
+
 }
 
-.newsletter{
-    width:300px;
-}
+
+
+/* ===========================
+        NEWSLETTER
+=========================== */
+
 
 .newsletter input{
-    width:100%;
+
+    width:250px;
+
     border:none;
+
     border-bottom:2px solid #111;
-    padding:10px 0;
-    margin-bottom:20px;
+
+    padding:12px 0;
+
+    font-size:16px;
+
     outline:none;
+
 }
+
+
 
 .newsletter button{
-    border:none;
+
+    margin-top:20px;
     background:none;
+    border:none;
     border-bottom:2px solid #111;
+    padding-bottom:7px;
+    font-size:15px;
+    font-weight:600;
     cursor:pointer;
-    padding-bottom:5px;
+
 }
 
+
+.newsletter button:hover{
+
+    color:#B88E2F;
+
+}
+
+
+
+/* ===========================
+        COPYRIGHT
+=========================== */
+
+
 .copyright{
-    margin-top:60px;
-    padding-top:20px;
+
+    grid-column:1 / -1;
+    padding-top:5px;
     border-top:1px solid #ddd;
-    text-align:center;
-    color:#777;
+
+}
+
+
+
+.copyright p{
+
+    color:#333;
+    font-size:16px;
+
 }

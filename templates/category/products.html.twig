@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}
+
+{{ category }}
+
+{% endblock %}
+
+
+
+{% block body %}
+
+
+<h1 class="category-title">
+
+{{ category|capitalize }}
+
+Collection
+
+</h1>
+
+
+
+<div class="products-container">
+
+
+<div class="product-card">
+
+<img src="{{asset('images/chair.jpg')}}">
+
+<h3>Modern Chair</h3>
+
+<p>$120</p>
+
+</div>
+
+
+
+<div class="product-card">
+
+<img src="{{asset('images/table.jpg')}}">
+
+<h3>Wood Table</h3>
+
+<p>$300</p>
+
+</div>
+
+
+</div>
+
+
+{% endblock %}
