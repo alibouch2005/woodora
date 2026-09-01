@@ -1,200 +1,72 @@
 /* =====================
-   HERO
-===================== */
-
-.hero {
-    width: 100%;
-    margin-top: 30px;
-}
-
-.hero-image {
-    position: relative;
-    width: 100%;
-    height: 600px;
-    overflow: hidden;
-}
-
-.hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-
-/* =====================
-   HERO CARD
-===================== */
-
-.hero-card {
-    position: absolute;
-
-    right: 80px;
-    top: 50%;
-
-    transform: translateY(-50%);
-
-    width: 420px;
-    padding: 45px;
-
-    background: #fff3e3;
-}
-
-.hero-card span {
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 2px;
-}
-
-.hero-card h1 {
-    margin: 15px 0;
-
-    color: #B88E2F;
-
-    font-size: 42px;
-    line-height: 1.15;
-}
-
-.hero-card p {
-    margin-bottom: 25px;
-
-    color: #555;
-
-    line-height: 25px;
-}
-
-.hero-card a {
-    display: inline-block;
-
-    padding: 15px 45px;
-
-    background: #B88E2F;
-    color: white;
-
-    text-decoration: none;
-    font-weight: 600;
-
-    transition: 0.3s;
-}
-
-.hero-card a:hover {
-    background: #8f6d20;
-}
-
-
-/* =====================
    PRODUCTS PAGE
 ===================== */
 
 .products-page {
     width: 90%;
     max-width: 1200px;
-
     margin: 0 auto;
-
     padding: 70px 0 100px;
 }
 
-
-/* =====================
-   PRODUCTS HEADER
-===================== */
-
 .products-header {
     margin-bottom: 50px;
-
     text-align: center;
 }
 
 .products-label {
     display: block;
-
     margin-bottom: 12px;
-
     color: #B88E2F;
-
     font-size: 13px;
     font-weight: 600;
-
     letter-spacing: 2px;
 }
 
 .products-header h1 {
     margin: 0 0 10px;
-
     color: #333;
-
     font-size: 42px;
     font-weight: 700;
 }
 
 .products-header p {
     margin: 0;
-
     color: #777;
-
     font-size: 15px;
 }
 
-
-/* =====================
-   PRODUCTS GRID
-===================== */
-
 .products-container {
     display: grid;
-
     grid-template-columns: repeat(3, 1fr);
-
     gap: 30px;
 }
 
-
-/* =====================
-   PRODUCT CARD
-===================== */
-
 .product-card {
     overflow: hidden;
-
     background: #fff;
-
-    border-radius: 12px;
-
+    border-radius: 8px;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-
-    transition:
-        transform 0.3s ease,
-        box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
     transform: translateY(-8px);
-
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.14);
 }
-
-
-/* =====================
-   PRODUCT IMAGE
-===================== */
 
 .product-image {
     width: 100%;
     height: 320px;
-
     overflow: hidden;
-
     background: #f5f3ef;
 }
 
 .product-image img {
     display: block;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     transition: transform 0.5s ease;
 }
 
@@ -202,73 +74,49 @@
     transform: scale(1.06);
 }
 
-
-/* =====================
-   PRODUCT INFORMATION
-===================== */
-
 .product-info {
     padding: 22px;
 }
 
 .product-info h3 {
     margin: 0 0 10px;
-
     color: #333;
-
     font-size: 20px;
     font-weight: 600;
 }
 
 .product-description {
     min-height: 45px;
-
     margin: 0;
-
     color: #777;
-
     font-size: 14px;
     line-height: 1.6;
 }
 
-
-/* =====================
-   PRODUCT BOTTOM
-===================== */
-
 .product-bottom {
     display: flex;
-
     justify-content: space-between;
     align-items: center;
-
     gap: 15px;
-
     margin-top: 20px;
 }
 
 .product-price {
     color: #B88E2F;
-
     font-size: 19px;
     font-weight: 600;
+    white-space: nowrap;
 }
 
 .product-button {
     display: inline-block;
-
     padding: 10px 15px;
-
     background: #B88E2F;
     color: white;
-
     border-radius: 4px;
-
     text-decoration: none;
-
     font-size: 13px;
     font-weight: 600;
-
     transition: background 0.3s ease;
 }
 
@@ -276,48 +124,22 @@
     background: #8f6d20;
 }
 
-
-/* =====================
-   NO PRODUCTS
-===================== */
-
 .no-products {
     grid-column: 1 / -1;
-
     padding: 50px;
-
     color: #777;
-
     text-align: center;
 }
 
-
-/* =====================
-   TABLET
-===================== */
-
 @media only screen and (max-width: 1000px) {
-
     .products-container {
         grid-template-columns: repeat(2, 1fr);
     }
-
-    .hero-card {
-        right: 40px;
-    }
-
 }
 
-
-/* =====================
-   MOBILE
-===================== */
-
 @media only screen and (max-width: 768px) {
-
     .products-page {
         width: 90%;
-
         padding: 45px 0 70px;
     }
 
@@ -336,7 +158,6 @@
 
     .products-container {
         grid-template-columns: 1fr;
-
         gap: 25px;
     }
 
@@ -351,20 +172,9 @@
     .product-info h3 {
         font-size: 19px;
     }
-
-    .product-bottom {
-        margin-top: 18px;
-    }
-
 }
 
-
-/* =====================
-   SMALL MOBILE
-===================== */
-
 @media only screen and (max-width: 480px) {
-
     .products-page {
         width: 92%;
     }
@@ -384,8 +194,6 @@
 
     .product-button {
         width: 100%;
-
         text-align: center;
     }
-
 }

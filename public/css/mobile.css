@@ -450,3 +450,77 @@ footer .container{
 
 
 }
+
+/* =====================
+   PRODUCTS MOBILE
+===================== */
+
+@media (max-width: 768px) {
+
+    .products-page {
+
+        width: 90%;
+
+        padding: 45px 0 70px;
+
+    }
+
+
+    .products-header {
+
+        margin-bottom: 35px;
+
+    }
+
+
+    .products-header h1 {
+
+        font-size: 30px;
+
+    }
+
+
+    .products-header p {
+
+        font-size: 14px;
+
+    }
+
+
+    .products-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 25px;
+
+    }
+
+
+    .product-image {
+
+        height: 300px;
+
+    }
+
+
+    .product-info {
+
+        padding: 18px;
+
+    }
+
+
+    .product-info h3 {
+
+        font-size: 19px;
+
+    }
+
+
+    .product-bottom {
+
+        margin-top: 18px;
+
+    }
+
+}

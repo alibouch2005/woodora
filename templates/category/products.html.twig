@@ -2,9 +2,12 @@
 
 
 {% block title %}
+    {{ category.name }} | Woodora
+{% endblock %}
 
-{{ category }}
-
+{% block stylesheets %}
+    {{ parent() }}
+    <link rel="stylesheet" href="{{ asset('css/products.css') }}">
 {% endblock %}
 
 
@@ -12,43 +15,98 @@
 {% block body %}
 
 
-<h1 class="category-title">
-
-{{ category|capitalize }}
-
-Collection
-
-</h1>
+<section class="products-page">
 
 
+    <div class="products-header">
 
-<div class="products-container">
+        <span class="products-label">
+            WOODORA COLLECTION
+        </span>
 
+        <h1>
+            {{ category.name }}
+        </h1>
 
-<div class="product-card">
+        <p>
+            Discover our {{ category.name|lower }} furniture collection.
+        </p>
 
-<img src="{{asset('images/chair.jpg')}}">
-
-<h3>Modern Chair</h3>
-
-<p>$120</p>
-
-</div>
+    </div>
 
 
 
-<div class="product-card">
-
-<img src="{{asset('images/table.jpg')}}">
-
-<h3>Wood Table</h3>
-
-<p>$300</p>
-
-</div>
+    <div class="products-container">
 
 
-</div>
+        {% for product in products %}
+
+
+            <article class="product-card">
+
+
+                <div class="product-image">
+
+                    <img
+                        src="{{ asset('images/products/' ~ product.image) }}"
+                        alt="{{ product.name }}"
+                        onerror="this.onerror=null; this.src='{{ asset('images/categories/' ~ category.image) }}';"
+                    >
+
+                </div>
+
+
+
+                <div class="product-info">
+
+
+                    <h3>
+                        {{ product.name }}
+                    </h3>
+
+
+                    <p class="product-description">
+                        {{ product.description }}
+                    </p>
+
+
+                    <div class="product-bottom">
+
+
+                        <span class="product-price">
+                            {{ product.price|number_format(2, ',', ' ') }} DH
+                        </span>
+
+
+                        <a href="#" class="product-button">
+                            View Product
+                        </a>
+
+
+                    </div>
+
+
+                </div>
+
+
+            </article>
+
+
+        {% else %}
+
+
+            <p class="no-products">
+                No products available in this category.
+            </p>
+
+
+        {% endfor %}
+
+
+    </div>
+
+
+</section>
 
 
 {% endblock %}
