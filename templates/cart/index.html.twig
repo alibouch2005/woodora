@@ -1,0 +1,81 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+    Shopping Cart | Woodora
+{% endblock %}
+
+{% block body %}
+
+<section class="cart-page">
+
+    <div class="cart-header">
+        <span class="cart-label">WOODORA</span>
+        <h1>Your Shopping Cart</h1>
+        <p>Review the products you selected before checkout.</p>
+    </div>
+
+    {% if products is empty %}
+
+        <div class="cart-empty">
+            <h2>Your cart is empty</h2>
+            <p>You haven't added any products yet.</p>
+
+            <a href="{{ path('app_home') }}" class="continue-shopping">
+                Continue Shopping
+            </a>
+        </div>
+
+    {% else %}
+
+        <div class="cart-container">
+
+            {% for item in products %}
+
+                <article class="cart-item">
+
+                    <div class="cart-item-image">
+                        <img
+                            src="{{ asset('images/products/' ~ item.product.image) }}"
+                            alt="{{ item.product.name }}"
+                        >
+                    </div>
+
+                    <div class="cart-item-info">
+
+                        <span class="cart-item-category">
+                            {{ item.product.category.name }}
+                        </span>
+
+                        <h2>
+                            {{ item.product.name }}
+                        </h2>
+
+                        <p>
+                            {{ item.product.description }}
+                        </p>
+
+                        <div class="cart-item-bottom">
+
+                            <span class="cart-item-price">
+                                {{ item.product.price|number_format(2, '.', ' ') }} DH
+                            </span>
+
+                            <span class="cart-item-quantity">
+                                Quantity: {{ item.quantity }}
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            {% endfor %}
+
+        </div>
+
+    {% endif %}
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,357 @@
+/* ================= HEADER ================= */
+
+header{
+    position:sticky;
+    top:0;
+    width:100%;
+    background:#fff;
+    border-bottom:1px solid #e5e5e5;
+    z-index:1000;
+}
+
+header .container{
+    height:90px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* ================= LOGO ================= */
+
+.logo a{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    text-decoration:none;
+}
+
+.logo img{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+}
+
+.logo span{
+    font-size:38px;
+    font-weight:700;
+    color:#111;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar ul{
+    display:flex;
+    gap:50px;
+    list-style:none;
+}
+
+.navbar a{
+    text-decoration:none;
+    color:#111;
+    font-weight:500;
+    position:relative;
+    transition:.3s;
+}
+
+.navbar a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:#B88E2F;
+    transition:.3s;
+}
+
+.navbar a:hover{
+    color:#B88E2F;
+}
+
+.navbar a:hover::after{
+    width:100%;
+}
+
+/* ================= ICONS ================= */
+
+.icons{
+    display:flex;
+    gap:22px;
+}
+
+.icons a{
+    color:#111;
+    font-size:21px;
+    transition:.3s;
+}
+
+.icons a:hover{
+    color:#B88E2F;
+}
+
+/* ================= MENU BUTTON ================= */
+
+.menu-toggle{
+    display:none;
+    font-size:32px;
+    cursor:pointer;
+}
+
+/* ================= OVERLAY ================= */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.45);
+    opacity:0;
+    visibility:hidden;
+    transition:.35s;
+    z-index:998;
+}
+
+.overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+
+/* ================= MOBILE MENU ================= */
+
+.mobile-menu{
+    position:fixed;
+    top:0;
+    right:-320px;
+    width:320px;
+    height:100vh;
+    background:#fff;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    transition:.4s;
+    z-index:999;
+    box-shadow:-8px 0 20px rgba(0,0,0,.15);
+}
+
+.mobile-menu.active{
+    right:0;
+}
+
+.mobile-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:40px;
+}
+
+.close-menu{
+    background:none;
+    border:none;
+    font-size:25px;
+    cursor:pointer;
+}
+
+.mobile-menu ul{
+    list-style:none;
+}
+
+.mobile-menu li{
+    margin-bottom:25px;
+}
+
+.mobile-menu a{
+    text-decoration:none;
+    color:#111;
+    font-size:20px;
+    font-weight:500;
+}
+
+.mobile-icons{
+    margin-top:auto;
+    display:flex;
+    gap:20px;
+}
+
+.mobile-icons a{
+    color:#111;
+    font-size:24px;
+}
+
+/* ===========================
+        FOOTER WOODORA
+=========================== */
+
+footer{
+
+   
+    padding:30px 0 10px;
+    border-top:1px solid #ddd;
+    background:#fff;
+
+}
+
+
+footer .container{
+
+    width:90%;
+    max-width:1280px;
+    margin:auto;
+    display:grid;
+    grid-template-columns: 2fr 1fr 1.2fr 1.5fr;
+    gap:10px;
+    align-items:start;
+
+}
+
+
+/* ===========================
+        LOGO COLUMN
+=========================== */
+
+
+.footer-logo h2{
+
+    font-size:32px;
+    font-weight:700;
+    color:#111;
+    margin-bottom:35px;
+
+}
+
+
+.footer-logo p{
+
+    color:#777;
+    font-size:18px;
+    line-height:30px;
+
+}
+
+
+
+/* ===========================
+        TITLES
+=========================== */
+
+
+.footer-links h3,
+.footer-help h3,
+.newsletter h3{
+
+    color:#999;
+    font-size:18px;
+    font-weight:500;
+    margin-bottom:25px;
+
+}
+
+
+
+/* ===========================
+        LINKS
+=========================== */
+
+
+.footer-links ul,
+.footer-help ul{
+
+    list-style:none;
+    padding:0;
+    margin:0;
+
+}
+
+
+.footer-links li,
+.footer-help li{
+
+    margin-bottom:15px;
+
+}
+
+
+
+.footer-links a,
+.footer-help a{
+
+    text-decoration:none;
+    color:#111;
+    font-size:17px;
+    transition:.3s;
+
+}
+
+
+.footer-links a:hover,
+.footer-help a:hover{
+
+    color:#B88E2F;
+
+}
+
+
+
+/* ===========================
+        NEWSLETTER
+=========================== */
+
+
+.newsletter input{
+
+    width:250px;
+
+    border:none;
+
+    border-bottom:2px solid #111;
+
+    padding:12px 0;
+
+    font-size:16px;
+
+    outline:none;
+
+}
+
+
+
+.newsletter button{
+
+    margin-top:20px;
+    background:none;
+    border:none;
+    border-bottom:2px solid #111;
+    padding-bottom:7px;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+
+}
+
+
+.newsletter button:hover{
+
+    color:#B88E2F;
+
+}
+
+
+
+/* ===========================
+        COPYRIGHT
+=========================== */
+
+
+.copyright{
+
+    grid-column:1 / -1;
+    padding-top:5px;
+    border-top:1px solid #ddd;
+
+}
+
+
+
+.copyright p{
+
+    color:#333;
+    font-size:16px;
+
+}

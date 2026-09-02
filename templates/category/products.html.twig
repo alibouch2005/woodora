@@ -73,14 +73,17 @@
                     <div class="product-bottom">
 
 
-                        <span class="product-price">
-                            {{ product.price|number_format(2, ',', ' ') }} DH
-                        </span>
+                       <span class="product-price">
+    {{ product.price|number_format(2, '.', ' ') }} DH
+</span>
 
 
-                        <a href="#" class="product-button">
-                            View Product
-                        </a>
+                        <a
+    href="{{ path('product_show', {'id': product.id}) }}"
+    class="product-button"
+>
+    View Product
+</a>
 
 
                     </div>
