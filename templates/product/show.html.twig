@@ -12,6 +12,7 @@
         <img
             src="{{ asset('images/products/' ~ product.image) }}"
             alt="{{ product.name }}"
+            onerror="this.onerror=null; this.src='{{ asset('images/categories/' ~ product.category.image) }}';"
         >
     </div>
 
@@ -21,32 +22,32 @@
             {{ product.category.name }}
         </span>
 
-        <h1>{{ product.name }}</h1>
+        <h1>
+            {{ product.name }}
+        </h1>
 
-       <div class="product-detail-price">
-    {{ product.price|number_format(2, '.', ' ') }} DH
-</div>
+        <div class="product-detail-price">
+            {{ product.price|number_format(2, ',', ' ') }} DH
+        </div>
 
         <p class="product-detail-description">
             {{ product.description }}
         </p>
 
-       <div class="product-detail-actions">
-
-    <a 
-        href="{{ path('cart_add', {'id': product.id}) }}"
-        class="add-to-cart"
-    >
-        Add to Cart
-    </a>
-
-</div>
+        <div class="product-detail-actions">
+            <a
+                href="{{ path('cart_add', {'id': product.id}) }}"
+                class="add-to-cart"
+            >
+                Add to Cart
+            </a>
+        </div>
 
         <a
-            href="{{ path('category_products', {'slug': product.category.name}) }}"
+            href="{{ path('category_products', {'slug': product.category.slug}) }}"
             class="back-products"
         >
-            ← Back to {{ product.category.name }}
+            &larr; Back to {{ product.category.name }}
         </a>
 
     </div>

@@ -3,75 +3,239 @@
     <div class="container">
 
         <!-- Logo -->
-       <div class="logo">
-    <a href="/">
-        <img src="{{ asset('images/logo-icon.png') }}" alt="Woodora">
-        <span>Woodora</span>
-    </a>
-</div>
+        <div class="logo">
+            <a href="{{ path('app_home') }}">
+                <img src="{{ asset('images/logo-icon.png') }}" alt="Woodora">
+                <span>Woodora</span>
+            </a>
+        </div>
+
+
         <!-- Navigation Desktop -->
         <nav class="navbar">
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="{{ path('app_home') }}">Home</a></li>
                 <li><a href="#">Shop</a></li>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
 
+
         <!-- Icônes Desktop -->
         <div class="icons">
-            <a href="#"><i class="bi bi-person"></i></a>
-            <a href="#"><i class="bi bi-search"></i></a>
-            <a href="#"><i class="bi bi-heart"></i></a>
-            <a href="#"><i class="bi bi-cart3"></i></a>
+
+            <a href="#">
+                <i class="bi bi-person"></i>
+            </a>
+
+
+            <a href="#">
+                <i class="bi bi-search"></i>
+            </a>
+
+
+            <a href="#">
+                <i class="bi bi-heart"></i>
+            </a>
+
+
+
+            <!-- CART -->
+            <div class="cart-wrapper">
+
+                <a href="{{ path('cart_index') }}" class="cart-icon">
+
+                    <i class="bi bi-cart"></i>
+
+
+                    {% if cart_count() > 0 %}
+
+                        <span class="cart-count">
+                            {{ cart_count() }}
+                        </span>
+
+                    {% endif %}
+
+                </a>
+
+
+
+                <!-- MINI CART -->
+
+                <div class="mini-cart">
+
+                    <h3>
+                        Your Cart
+                    </h3>
+
+
+                    {% if cart_products() is empty %}
+
+                        <p>
+                            Your cart is empty
+                        </p>
+
+
+                    {% else %}
+
+
+                        {% for item in cart_products() %}
+
+                            <div class="mini-cart-item">
+
+
+                                <img
+                                    src="{{ asset('images/products/' ~ item.product.image) }}"
+                                    alt="{{ item.product.name }}"
+                                >
+
+
+                                <div>
+
+                                    <strong>
+                                        {{ item.product.name }}
+                                    </strong>
+
+
+                                    <p>
+                                        {{ item.product.price|number_format(2,'.',' ') }} DH
+                                        × {{ item.quantity }}
+                                    </p>
+
+
+                                </div>
+
+
+                            </div>
+
+
+                        {% endfor %}
+
+
+
+                        <a href="{{ path('cart_index') }}" class="mini-cart-button">
+                            View Cart
+                        </a>
+
+
+                    {% endif %}
+
+
+                </div>
+
+
+            </div>
+
+
         </div>
+
+
+
 
         <!-- Bouton Menu Mobile -->
         <div class="menu-toggle">
+
             <i class="bi bi-list"></i>
+
         </div>
+
 
     </div>
 
+
 </header>
+
+
 
 <!-- Fond noir -->
 <div class="overlay"></div>
 
+
+
 <!-- Menu Mobile -->
+
 <div class="mobile-menu">
 
+
     <div class="mobile-header">
-        <h2>Woodora</h2>
+
+        <h2>
+            Woodora
+        </h2>
+
 
         <button class="close-menu">
+
             <i class="bi bi-x-lg"></i>
+
         </button>
+
+
     </div>
+
+
 
     <ul>
 
-        <li><a href="#">Home</a></li>
+        <li>
+            <a href="{{ path('app_home') }}">
+                Home
+            </a>
+        </li>
 
-        <li><a href="#">Shop</a></li>
 
-        <li><a href="#">About</a></li>
+        <li>
+            <a href="#">
+                Shop
+            </a>
+        </li>
 
-        <li><a href="#">Contact</a></li>
+
+        <li>
+            <a href="#">
+                About
+            </a>
+        </li>
+
+
+        <li>
+            <a href="#">
+                Contact
+            </a>
+        </li>
+
 
     </ul>
 
+
+
+
     <div class="mobile-icons">
 
-        <a href="#"><i class="bi bi-person"></i></a>
 
-        <a href="#"><i class="bi bi-search"></i></a>
+        <a href="#">
+            <i class="bi bi-person"></i>
+        </a>
 
-        <a href="#"><i class="bi bi-heart"></i></a>
 
-        <a href="#"><i class="bi bi-cart3"></i></a>
+        <a href="#">
+            <i class="bi bi-search"></i>
+        </a>
+
+
+        <a href="#">
+            <i class="bi bi-heart"></i>
+        </a>
+
+
+        <a href="{{ path('cart_index') }}">
+            <i class="bi bi-cart3"></i>
+        </a>
+
 
     </div>
+
+
 
 </div>

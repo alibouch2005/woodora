@@ -54,26 +54,61 @@
                             {{ item.product.description }}
                         </p>
 
-                        <div class="cart-item-bottom">
+                       <div class="cart-item-bottom">
 
-                            <span class="cart-item-price">
-                                {{ item.product.price|number_format(2, '.', ' ') }} DH
-                            </span>
+    <span class="cart-item-price">
+        {{ item.product.price|number_format(2, ',', ' ') }} DH
+    </span>
 
-                            <span class="cart-item-quantity">
-                                Quantity: {{ item.quantity }}
-                            </span>
 
-                        </div>
+    <div class="cart-item-quantity">
 
-                    </div>
+        <a href="{{ path('cart_decrease', {'id': item.product.id}) }}">
+            -
+        </a>
+
+        <span>
+            {{ item.quantity }}
+        </span>
+
+        <a href="{{ path('cart_increase', {'id': item.product.id}) }}">
+            +
+        </a>
+
+    </div>
+
+
+    <span>
+        Subtotal:
+        {{ (item.product.price * item.quantity)|number_format(2, ',', ' ') }} DH
+    </span>
+
+
+    <a 
+        href="{{ path('cart_remove', {'id': item.product.id}) }}"
+        class="cart-remove"
+    >
+        Remove
+    </a>
+
+</div>
+</div>
+
+
 
                 </article>
 
             {% endfor %}
 
         </div>
+<div class="cart-total">
 
+    Total:
+    <strong>
+        {{ total|number_format(2, ',', ' ') }} DH
+    </strong>
+
+</div>
     {% endif %}
 
 </section>
